@@ -36,21 +36,9 @@ class Serializer {
 
     }
 
-    self::var_error_log(get_taxonomies());
-
     $this->redirect();
 
   }
-
-  private static function var_error_log( $object=null ){
-    ob_start();                    // start buffer capture
-    var_dump( $object );           // dump the values
-    $contents = ob_get_contents(); // put the buffer into a variable
-    ob_end_clean();                // end capture
-    error_log( $contents );        // log contents of the result of var_dump( $object )
-  }
-
-
 
   /**
    * Determines if the nonce variable associated with the options page is set
